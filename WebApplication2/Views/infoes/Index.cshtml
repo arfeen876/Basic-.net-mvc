@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WebApplication2.Models.info>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Info via trigger Is Here</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Update_time)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Update_time)
+        </td>
+        
+    </tr>
+}
+
+</table>

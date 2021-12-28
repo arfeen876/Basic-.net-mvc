@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebApplication2.Models.Players>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Players edit and stuff</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.P_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.P_Format)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Score)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_Format)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Score)
+        </td>
+        <td>
+            @Html.ActionLink("Update", "Edit", new { id=item.P_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.P_id })
+        </td>
+    </tr>
+}
+
+</table>
